@@ -9,7 +9,7 @@
 #define Stack_Size 50
 
 #include"stack.h"
-//Ö÷º¯Êı
+//ä¸»å‡½æ•°
 
 int main()
 {
@@ -19,7 +19,7 @@ int main()
 	
 	InitStack_num(&OVS);
 
-	InitStack(&OPTR);//³õÊ¼»¯
+	InitStack(&OPTR);//åˆå§‹åŒ–
 
 	char ch,ch_temp,op;
 
@@ -29,23 +29,23 @@ int main()
 
 	printf("Please input an expression(Ending with #):");
 
-	ch=getchar();//ÕâÀïÓĞÊäÈë// 
+	ch=getchar();//è¿™é‡Œæœ‰è¾“å…¥// 
 
 	while(ch!='#'||GetTop(&OPTR)!='#')
 	{
 
-		if(ch>='0'&&ch<='9')//²Ù×÷Êı 
+		if(ch>='0'&&ch<='9')//æ“ä½œæ•° 
 		{
-			temp=ch-'0';//ÏÈ°Ñµ±Ç°²Ù×÷Êı´Ó×Ö·û×ª»»³ÉÊı×Ö 
+			temp=ch-'0';//å…ˆæŠŠå½“å‰æ“ä½œæ•°ä»å­—ç¬¦è½¬æ¢æˆæ•°å­— 
 
-			ch=getchar();//ÕâÀïÓĞÊäÈë// 
+			ch=getchar();//è¿™é‡Œæœ‰è¾“å…¥// 
 
 			while(ch>='0'&&ch<='9')
 			{
 
 				temp=temp*10+ch-'0';
 
-				ch=getchar();//ÕâÀïÓĞÊäÈë// 
+				ch=getchar();//è¿™é‡Œæœ‰è¾“å…¥// 
 
 			}
 
@@ -59,7 +59,7 @@ int main()
 
 		 {
 
-		 	case '>':Push(&OPTR,ch);ch=getchar();break;//ÕâÀïÓĞÊäÈë// 
+		 	case '>':Push(&OPTR,ch);ch=getchar();break;//è¿™é‡Œæœ‰è¾“å…¥// 
 
 		 	case '=':
 
@@ -67,7 +67,7 @@ int main()
 
 		 		num=GetTop_num(&OVS); 
 
-				Pop_num(&OVS,&x);//½«µÚ¶ş¸ö½øÀ´µÄ²Ù×÷Êı³öÕ» £¨Ôİ´æÈëÕûĞÍ±äÁ¿x£© 
+				Pop_num(&OVS,&x);//å°†ç¬¬äºŒä¸ªè¿›æ¥çš„æ“ä½œæ•°å‡ºæ ˆ ï¼ˆæš‚å­˜å…¥æ•´å‹å˜é‡xï¼‰ 
 
 				switch(GetTop(&OPTR)){
 
@@ -81,17 +81,17 @@ int main()
 
 				}
 
-				Pop(&OPTR,&op);//½«×îºó½øÀ´µÄÔËËã·û³öÕ» £¨Ôİ´æÈë×Ö·û±äÁ¿op£© 
+				Pop(&OPTR,&op);//å°†æœ€åè¿›æ¥çš„è¿ç®—ç¬¦å‡ºæ ˆ ï¼ˆæš‚å­˜å…¥å­—ç¬¦å˜é‡opï¼‰ 
 
-				Pop_num(&OVS,&x);//½«µÚÒ»¸ö½øÀ´µÄ²Ù×÷Êı³öÕ»  £¨Ôİ´æÈëÕûĞÍ±äÁ¿x£© 
+				Pop_num(&OVS,&x);//å°†ç¬¬ä¸€ä¸ªè¿›æ¥çš„æ“ä½œæ•°å‡ºæ ˆ  ï¼ˆæš‚å­˜å…¥æ•´å‹å˜é‡xï¼‰ 
 
-				Push_num(&OVS,num);//½«½øĞĞµÚÒ»´ÎÔËËãµÃµ½µÄ½á¹û´æÈëÕ»OVSÖĞ 
+				Push_num(&OVS,num);//å°†è¿›è¡Œç¬¬ä¸€æ¬¡è¿ç®—å¾—åˆ°çš„ç»“æœå­˜å…¥æ ˆOVSä¸­ 
 
 				if(ch==')'){
 
 					Pop(&OPTR,&op);
 
-					ch=getchar();//ÕâÀïÓĞÊäÈë// 
+					ch=getchar();//è¿™é‡Œæœ‰è¾“å…¥// 
 				}
 
 		 }
@@ -105,3 +105,21 @@ int main()
 	printf("the result is %d",v);
 
 } 
+
+Copyright (C) <year> <copyright holders>
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
